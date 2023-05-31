@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weather js application</title>
-    <link rel="stylesheet" href="weath.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="mobile-view.css">
 </head>
 <body>
     
     <div class="card">
         <div class="search">
             <input type="text" placeholder="enter city name" spellcheck="false">
-            <button><img src="images/search.png"></button>
+            <div class="search-icon"><i class="fas fa-search"></i></div>
         </div>
 
         <div class="weather">
@@ -38,12 +39,17 @@
                         <p>Wind Speed</p>
                     </div>
                 </div>
-               
 
             </div>
 
         </div>
+
+        <div class="weather-error">
+            <p>ERROR...PLACE DOES NOT EXIST!!!</p>
+        </div>
     </div>
-    <script src="weatherr.js"></script>
+
+    <script src="https://kit.fontawesome.com/a692e1c39f.js" crossorigin="anonymous"></script>
+    <script src="weatherFetch.js"></script>
 </body>
 </html>

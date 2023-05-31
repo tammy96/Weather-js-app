@@ -16,6 +16,7 @@
     background: #21182f;
     color: #fff;
     margin: 100px auto 0;
+    /* border: 10px solid red; */
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -56,6 +57,20 @@
 
  }
 
+ .weather{
+  display: none;
+ }
+
+ .search-icon {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 1rem;
+  background: #ebfffc;
+  color: #21182f;
+ }
+
  .weather-icon{
    width: 170px;
    margin-top: 30px;
@@ -75,6 +90,7 @@
 
  .details {
    display: flex;
+   gap: 1rem;
    align-items: center;
    justify-content: space-between;
    padding: 0 20px;
@@ -94,5 +110,10 @@
 
  .humidity, .wind {
       font-size: 28px; 
-      /* margin-top: -6px; */
+ }
+
+ .weather-error{
+  font-size: 12px;
+  padding: 10px;
+  display: none;
  }

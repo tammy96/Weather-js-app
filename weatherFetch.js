@@ -2,7 +2,8 @@
 const API_KEY = "64f60853740a1ee3ba20d0fb595c97d5";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 const searchBox = document.querySelector(".search input")
-const searchBtn = document.querySelector(".search button")
+const searchBtn = document.querySelector(".search-icon")
+const searched =document.querySelector(".search")
 const weatherIcon = document.querySelector(".weather-icon")
 const humidIcon = document.querySelector(".humidity-icon")
 const windIcon = document.querySelector(".wind-icon")
@@ -39,18 +40,14 @@ function getWeather(city) {
         weatherIcon.src = "images/mist.png"
     }
 
+
+  document.querySelector(".weather").style.display = "block"
+  document.querySelector(".weather-error").style.display = "none"
     console.log(data);
       }).catch((err) => {
 
-        document.querySelector(".city").innerHTML = "Oops error" 
-        document.querySelector(".temp").innerHTML = "Oops error";
-        document.querySelector(".humidity").innerHTML = "error";
-        document.querySelector(".wind").innerHTML = "Error";
-        weatherIcon.remove()
-        humidIcon.remove()
-        windIcon.remove()
-
-    
+        document.querySelector(".weather-error").style.display = "block"
+        document.querySelector(".weather").style.display = "none" 
       console.log((err), "THIS IS AN ERROR MESSAGE!!!!!!")
       });
 
@@ -58,7 +55,15 @@ function getWeather(city) {
 
 
 
+searched.addEventListener("keydown", function(e) {
+  if (e.keyCode === 13) {
+    getWeather(searchBox.value)
+      searchBox.value = ""
+  }
+});
+
   searchBtn.addEventListener("click",  function(){
     getWeather(searchBox.value)
+    searchBox.value = ""
   })
   
