@@ -24,20 +24,29 @@ function getWeather(city) {
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";
 
-    if(data.weather[0].main === "Clouds"){
-        weatherIcon.src = "images/clouds.png"
-    }
-    else if(data.weather[0].main === "Clear"){
-        weatherIcon.src = "images/clear.png"
-    }
-    else if(data.weather[0].main === "Rain"){
-        weatherIcon.src = "images/rain.png"
-    }
-    else if(data.weather[0].main === "Drizzle"){
-        weatherIcon.src = "images/drizzle.png"
-    }
-    else if(data.weather[0].main === "Mist"){
-        weatherIcon.src = "images/mist.png"
+    switch (data.weather[0].main) {
+      case "Clouds":
+        weatherIcon.src = "images/clouds.png";
+        console.log("yeah cloudy");
+        break;
+        case "Clear":
+          weatherIcon.src = "images/clear.png"
+          console.log("clearer than clear yeahh")
+          break;
+        case "Rain":
+          weatherIcon.src = "images/rain.png"
+          console.log("rainy as hell")
+          break;
+        case "Drizzle":
+          weatherIcon.src = "images/drizzle.png"
+          console.log("drizzlery")
+          break;
+        case "Mist":
+          weatherIcon.src = "images/mist.png"
+          console.log("mistycal")
+          break;
+      default:
+        break;
     }
 
 
